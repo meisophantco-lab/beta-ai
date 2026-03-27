@@ -1,0 +1,212 @@
+:root {
+    --primary: white;
+    --theme: mediumpurple;
+    --dark-theme: rgb(127, 93, 193);
+    --meta: #777;
+    --bg-light: #fdfbff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+    background-color: var(--meta);
+    font-family: system-ui, -apple-system, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme) transparent;
+}
+
+/* --- Header Section --- */
+header {
+    background: var(--primary);
+    width: 100%;
+    height: 150px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+header h1 {
+    color: var(--theme);
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.logo {
+    color: var(--meta);
+    font-family: fantasy;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* --- Navigation --- */
+.nav { 
+    display: flex; 
+    gap: 20px; }
+.nav a { 
+    color: var(--theme); 
+    text-decoration: none; 
+    font-weight: 600;
+}
+
+.menu-btn { 
+    display: none; 
+    font-size: 28px; 
+    cursor: pointer;
+    color: var(--theme);
+}
+
+/* --- Chat Container --- */
+.contact {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 25px;
+    border: 1px solid #eee;
+}
+
+#chatWindow {
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme) transparent;
+    flex: 1; 
+    overflow-y: auto; 
+    text-align: left; 
+    padding: 20px; 
+    background: #fdfbff; 
+    border-radius: 12px; 
+    margin-bottom: 20px; 
+    border: 1px solid mediumpurple;
+}
+
+/* Custom Message Bubbles */
+#chatWindow p {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 85%;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.interactive{
+    display: flex; 
+    gap: 10px; 
+    align-items: center;
+}
+
+/* --- Input & Buttons --- */
+input {
+    border: 2px solid #eee;
+    border-radius: 50px;
+    outline: none;
+    transition: 0.3s;
+    padding-left: 20px !important;
+}
+
+input:focus {
+    border-color: var(--theme);
+}
+
+.submit {
+    color: var(--primary);
+    background-color: var(--theme);
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.submit:hover {
+    background-color: var(--dark-theme);
+    transform: translateY(-2px);
+}
+
+#chatWindow{
+    max-width: 97%; 
+    height: 75vh; 
+    flex: 1; 
+    overflow-y: auto; 
+    text-align: left; 
+    padding: 20px; 
+    background: #fdfbff; 
+    border-radius: 12px; 
+    margin-bottom: 20px; 
+    border: 1px solid #eee; 
+    margin:auto; 
+    margin-top:45px;
+    margin-bottom: 20px;
+}
+
+.betatxt{
+    color: mediumpurple; 
+    text-align: left;
+}
+
+#sendBtn{
+    width: 120px; 
+    height: 50px; 
+    border-radius: 22px; 
+    cursor: pointer;
+}
+
+#status{
+    font-size: 0.8rem; 
+    color: #777; 
+    display: non;
+}
+
+#userInput{
+    flex: 1; 
+    height: 50px; 
+    text-align: left; 
+    padding: 10px;
+    margin-left: 5px;
+}
+
+footer {
+    color: var(--meta);
+    margin: 40px auto;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    header { height: 120px; }
+    .nav { display: none; }
+    .menu-btn { display: block; }
+    .contact { width: 95%; height: 70vh !important; }
+    
+    .nav.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 100;
+    }
+}
